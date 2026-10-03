@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import {
   useFonts as useSora,
@@ -56,14 +57,16 @@ export default function App() {
   }
 
   return (
-    <View style={styles.blank} onLayout={onLayout}>
-      <StatusBar style="light" />
-      {onboarded ? (
-        <RootNavigator />
-      ) : (
-        <OnboardingScreen onDone={() => setOnboarded(true)} />
-      )}
-    </View>
+    <SafeAreaProvider>
+      <View style={styles.blank} onLayout={onLayout}>
+        <StatusBar style="light" />
+        {onboarded ? (
+          <RootNavigator />
+        ) : (
+          <OnboardingScreen onDone={() => setOnboarded(true)} />
+        )}
+      </View>
+    </SafeAreaProvider>
   );
 }
 
