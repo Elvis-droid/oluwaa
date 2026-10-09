@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "Oluwaa",
+    "slug": "oluwaa",
+    "owner": "murdas-team",
+    "scheme": "oluwaa",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B0B12",
+    "splash": {
+      "image": "./assets/wave-background.jpg",
+      "resizeMode": "cover",
+      "backgroundColor": "#0B0B12"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "team.murdas.oluwaa",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"]
+      }
+    },
+    "android": {
+      "package": "team.murdas.oluwaa",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B0B12"
+      },
+      "permissions": [
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+        "WAKE_LOCK",
+        "POST_NOTIFICATIONS",
+        "READ_MEDIA_AUDIO",
+        "READ_MEDIA_IMAGES",
+        "READ_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": false,
+          "savePhotosPermission": false,
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Oluwaa uses one photo as your profile picture and music thumbnail."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "001ac863-9b9f-4ff1-9a20-5807a951a18d"
+      }
+    }
+  }
+}
